@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="1200" height="800" fill="none">
   <!-- S (Upper-Left, Crisp White) -->
   <path
-    d="M 122 44 C 116 28, 100 18, 78 18 C 52 18, 34 32, 34 50 C 34 70, 56 79, 80 84 C 106 89, 124 97, 124 114 C 124 130, 106 142, 80 142 C 54 142, 40 132, 34 118"
+    d="M 100 42 C 96 30, 84 24, 70 24 C 48 24, 36 34, 36 47 C 36 60, 52 64, 70 70 C 88 76, 104 80, 104 93 C 104 106, 92 116, 70 116 C 56 116, 44 110, 40 98"
     stroke="#ffffff"
-    stroke-width="21"
-    stroke-linecap="butt"
+    stroke-width="19"
+    stroke-linecap="round"
     stroke-linejoin="round"
     fill="none"
   />

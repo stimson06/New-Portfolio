@@ -21,10 +21,10 @@ export const SPulseLogo: React.FC<SPulseLogoProps> = ({ className = 'w-12 h-8', 
       >
         {/* S (Upper-Left: Crisp Dark Slate in light theme, Pure White in dark theme) */}
         <path
-          d="M 122 44 C 116 28, 100 18, 78 18 C 52 18, 34 32, 34 50 C 34 70, 56 79, 80 84 C 106 89, 124 97, 124 114 C 124 130, 106 142, 80 142 C 54 142, 40 132, 34 118"
+          d="M 100 42 C 96 30, 84 24, 70 24 C 48 24, 36 34, 36 47 C 36 60, 52 64, 70 70 C 88 76, 104 80, 104 93 C 104 106, 92 116, 70 116 C 56 116, 44 110, 40 98"
           className="stroke-slate-950 dark:stroke-white transition-colors duration-200"
-          strokeWidth="21"
-          strokeLinecap="butt"
+          strokeWidth="19"
+          strokeLinecap="round"
           strokeLinejoin="round"
           fill="none"
         />
