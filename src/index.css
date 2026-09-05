@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --primary-color: #558b85;
+  --heading-color: #1D2043;
+  --base-color: #777a8b;
+  --light-bg: #fafafa;
+  --card-bg: #ffffff;
+}
+
+.dark {
+  --primary-color: #6eb7b0;
+  --heading-color: #f0f3fa;
+  --base-color: #9ea3bd;
+  --light-bg: #0d1021;
+  --card-bg: #151933;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Modern Minimalist Custom Cursor (Fine pointer devices only) */
+@media (pointer: fine) {
+  body, a, button, [role="button"], [role="tab"], label, .cursor-pointer {
+    cursor: none !important;
+  }
+  input, textarea, select {
+    cursor: text !important;
+  }
+}
+
+/* Original portfolio sub-title with elegant dash line */
+.portfolio-sub-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.portfolio-sub-title::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 2px;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* Original portfolio theme-btn */
+.portfolio-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #558b85;
+  box-shadow: 0 10px 25px -5px rgba(85, 139, 133, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.portfolio-theme-btn:hover {
+  transform: translateY(-2px);
+  background-color: #467670;
+  box-shadow: 0 14px 28px -4px rgba(85, 139, 133, 0.5);
+  color: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 139, 133, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 139, 133, 0.6);
+}
+
