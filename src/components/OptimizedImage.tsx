@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -8,6 +8,20 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   containerClassName?: string;
   aspectRatio?: string;
 }
+
+const resolveAssetPath = (path: string): string => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  // Convert root-relative path to base-relative path for hosting environments like GitHub Pages
+  if (path.startsWith('/')) {
+    const base = import.meta.env.BASE_URL || './';
+    const cleanBase = base.endsWith('/') ? base : `${base}/`;
+    return `${cleanBase}${path.slice(1)}`;
+  }
+  return path;
+};
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
@@ -20,14 +34,23 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [currentSrc, setCurrentSrc] = useState(src);
+  const [currentSrc, setCurrentSrc] = useState(() => resolveAssetPath(src));
+
+  useEffect(() => {
+    setCurrentSrc(resolveAssetPath(src));
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
 
   const handleError = () => {
-    if (!hasError && fallbackSrc && currentSrc !== fallbackSrc) {
-      setCurrentSrc(fallbackSrc);
-    } else {
-      setHasError(true);
+    if (!hasError && fallbackSrc) {
+      const resolvedFallback = resolveAssetPath(fallbackSrc);
+      if (currentSrc !== resolvedFallback) {
+        setCurrentSrc(resolvedFallback);
+        return;
+      }
     }
+    setHasError(true);
   };
 
   return (

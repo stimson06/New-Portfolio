@@ -264,7 +264,7 @@ export const SkillsSection: React.FC = () => {
                 {/* Original Gear 1 (Top Left) */}
                 <div className="absolute top-2 left-6 w-16 h-16 animate-spin pointer-events-none" style={{ animationDuration: '14s' }}>
                   <img
-                    src="/assets/images/skills/gear.png"
+                    src={`${import.meta.env.BASE_URL}assets/images/skills/gear.png`}
                     alt="Rotating Gear 1"
                     className="w-full h-full object-contain opacity-70 drop-shadow-sm"
                   />
@@ -273,7 +273,7 @@ export const SkillsSection: React.FC = () => {
                 {/* Original Gear 2 (Top Right) */}
                 <div className="absolute top-10 right-4 w-12 h-12 animate-spin pointer-events-none" style={{ animationDuration: '10s', animationDirection: 'reverse' }}>
                   <img
-                    src="/assets/images/skills/gear.png"
+                    src={`${import.meta.env.BASE_URL}assets/images/skills/gear.png`}
                     alt="Rotating Gear 2"
                     className="w-full h-full object-contain opacity-60 drop-shadow-sm"
                   />
@@ -282,7 +282,7 @@ export const SkillsSection: React.FC = () => {
                 {/* Original Gear 3 (Bottom Right) */}
                 <div className="absolute bottom-6 right-8 w-20 h-20 animate-spin pointer-events-none" style={{ animationDuration: '18s' }}>
                   <img
-                    src="/assets/images/skills/gear.png"
+                    src={`${import.meta.env.BASE_URL}assets/images/skills/gear.png`}
                     alt="Rotating Gear 3"
                     className="w-full h-full object-contain opacity-50 drop-shadow-sm"
                   />
